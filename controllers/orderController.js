@@ -61,6 +61,9 @@ exports.getOrderById = async (req, res) => {
 // Update delivery status
 exports.updateDeliveryStatus = async (req, res) => {
   try {
+    console.log('Updating delivery status for order:', req.params.id);
+    console.log('Request body:', req.body);
+    
     const { id } = req.params;
     const { isDelivered, deliveredBy } = req.body;
     
@@ -86,6 +89,8 @@ exports.updateDeliveryStatus = async (req, res) => {
         error: 'Order not found' 
       });
     }
+    
+    console.log('Order updated successfully:', updatedOrder._id);
     
     res.status(200).json({ 
       success: true, 
