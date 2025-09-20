@@ -297,7 +297,6 @@ exports.updateDeliveryStatus = async (req, res) => {
         error: 'Order not found' 
       });
     }
-    
     console.log('Order updated successfully:', updatedOrder._id);
     
     res.status(200).json({ 
